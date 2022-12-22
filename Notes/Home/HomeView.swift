@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-final class NotesView: UIView {
+final class HomeView: UIView {
     
     private(set) var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = UIColor.white
-        tableView.register(NotesTableViewCell.self, forCellReuseIdentifier: NotesTableViewCell.identifier)
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
         tableView.separatorColor = .black
         return tableView
     }()

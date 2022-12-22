@@ -7,16 +7,16 @@
 
 import UIKit
 
-final class NotesViewController: UIViewController {
-    private let notesView = NotesView()
+final class HomeViewController: UIViewController {
+    private let homeView = HomeView()
  
     override func loadView() {
-    view = notesView
+    view = homeView
 }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        notesView.setup()
+        homeView.setup()
         navigationBarSettings()
         setupTableSettings()
     }
@@ -43,28 +43,31 @@ final class NotesViewController: UIViewController {
     }
     
     private func setupTableSettings() {
-        notesView.tableView.dataSource = self
-        notesView.tableView.delegate = self
+        homeView.tableView.dataSource = self
+        homeView.tableView.delegate = self
     }
     
 }
 
-extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NotesTableViewCell.identifier,
-                                                       for: indexPath) as? NotesTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: HomeTableViewCell.identifier,
+            for: indexPath) as? HomeTableViewCell else
+        {
             return UITableViewCell()
         }
+        
         var content = cell.defaultContentConfiguration()
         
         content.image = UIImage(systemName: "star")
         content.text = "123321"
         
-        content.imageProperties.tintColor = .purple
+  
 
         cell.contentConfiguration = content
         return cell
