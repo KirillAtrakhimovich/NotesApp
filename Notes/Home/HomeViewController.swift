@@ -7,16 +7,16 @@
 
 import UIKit
 
-final class NotesViewController: UIViewController {
-    private let notesView = NotesView()
- 
+final class HomeViewController: UIViewController {
+    private let homeView = HomeView()
+    private var models: [(title: String, note: String)] = []
     override func loadView() {
-    view = notesView
+    view = homeView
 }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        notesView.setup()
+        homeView.setup()
         navigationBarSettings()
         setupTableSettings()
     }
@@ -30,7 +30,10 @@ final class NotesViewController: UIViewController {
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.compactAppearance = appearance
         navigationController?.navigationBar.topItem?.title = "Notes"
-
+        
+        navigationItem.backButtonTitle = "Back"
+        navigationController?.navigationBar.tintColor = .black
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
                                                                  style: .done,
                                                                  target: self,
@@ -39,33 +42,32 @@ final class NotesViewController: UIViewController {
     }
     
     @objc func addNote(sender: UIBarButtonItem) {
-        navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
+        navigationController?.pushViewController(NewNoteViewController(), animated: true)
     }
     
     private func setupTableSettings() {
-        notesView.tableView.dataSource = self
-        notesView.tableView.delegate = self
+        homeView.tableView.dataSource = self
+        homeView.tableView.delegate = self
     }
-    
 }
 
-extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NotesTableViewCell.identifier,
-                                                       for: indexPath) as? NotesTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: HomeTableViewCell.identifier,
+            for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
+        
         var content = cell.defaultContentConfiguration()
         
         content.image = UIImage(systemName: "star")
-        content.text = "123321"
-        
-        content.imageProperties.tintColor = .purple
-
+        content.text = "123"
+        content.secondaryText = "456"
         cell.contentConfiguration = content
         return cell
     }
@@ -74,4 +76,3 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
 }
-
