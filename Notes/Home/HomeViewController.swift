@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     private let homeView = HomeView()
- 
+    private var models: [(title: String, note: String)] = []
     override func loadView() {
     view = homeView
 }
@@ -30,7 +30,10 @@ final class HomeViewController: UIViewController {
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.compactAppearance = appearance
         navigationController?.navigationBar.topItem?.title = "Notes"
-
+        
+        navigationItem.backButtonTitle = "Back"
+        navigationController?.navigationBar.tintColor = .black
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
                                                                  style: .done,
                                                                  target: self,
@@ -39,36 +42,32 @@ final class HomeViewController: UIViewController {
     }
     
     @objc func addNote(sender: UIBarButtonItem) {
-        navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
+        navigationController?.pushViewController(NewNoteViewController(), animated: true)
     }
     
     private func setupTableSettings() {
         homeView.tableView.dataSource = self
         homeView.tableView.delegate = self
     }
-    
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: HomeTableViewCell.identifier,
-            for: indexPath) as? HomeTableViewCell else
-        {
+            for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
         
         var content = cell.defaultContentConfiguration()
         
         content.image = UIImage(systemName: "star")
-        content.text = "123321"
-        
-  
-
+        content.text = "123"
+        content.secondaryText = "456"
         cell.contentConfiguration = content
         return cell
     }
@@ -77,4 +76,3 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
 }
-
