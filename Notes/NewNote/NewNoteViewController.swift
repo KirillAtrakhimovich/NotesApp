@@ -10,9 +10,11 @@ import UIKit
 class NewNoteViewController: UIViewController {
     
     private let newNoteView = NewNoteView()
- 
+    private var noteTitle: String = ""
+    private var note: String = ""
     override func loadView() {
     view = newNoteView
+        
 }
 
     override func viewDidLoad() {
@@ -30,7 +32,18 @@ class NewNoteViewController: UIViewController {
         navigationController?.navigationItem.backButtonTitle = "434"
         navigationItem.title = "New note"
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Save",
+                                                                      style: .done, target: self,
+                                                                      action: #selector(saveButtonTapped))
+    }
+    
+    @objc func saveButtonTapped() {
+        newNoteView.textField.text = noteTitle
+        newNoteView.textView.text = note
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func completion(noteTitle: String, note: String) {
         
-       
     }
 }
