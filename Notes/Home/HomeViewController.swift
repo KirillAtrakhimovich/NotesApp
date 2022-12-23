@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     private let homeView = HomeView()
-    private var models: [(title: String, note: String)] = []
+    private var models: [(noteTitle: String, note: String)] = []
     override func loadView() {
     view = homeView
 }
@@ -66,13 +66,19 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         var content = cell.defaultContentConfiguration()
         
         content.image = UIImage(systemName: "star")
-        content.text = "123"
-        content.secondaryText = "456"
+        content.text = models[indexPath.row].noteTitle
+        content.secondaryText = models[indexPath.row].note
         cell.contentConfiguration = content
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
+        
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "newNote") as? NewNoteViewController else { return }
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
