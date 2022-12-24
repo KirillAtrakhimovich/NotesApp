@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct NewNoteModel {
+    let noteTitle: String
+    let note: String
+}
