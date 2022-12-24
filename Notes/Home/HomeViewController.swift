@@ -9,7 +9,8 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     private let homeView = HomeView()
-    private var models: [(noteTitle: String, note: String)] = []
+    private var noteList = [NotesData]()
+    
     override func loadView() {
     view = homeView
 }
@@ -53,7 +54,7 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return noteList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,8 +67,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         var content = cell.defaultContentConfiguration()
         
         content.image = UIImage(systemName: "star")
-        content.text = models[indexPath.row].noteTitle
-        content.secondaryText = models[indexPath.row].note
+        content.text = noteList[indexPath.row].noteTitle
+        content.secondaryText = noteList[indexPath.row].noteContent
         cell.contentConfiguration = content
         return cell
     }
@@ -75,10 +76,5 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
-        
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "newNote") as? NewNoteViewController else { return }
-        
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
