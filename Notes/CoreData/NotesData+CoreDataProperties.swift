@@ -9,15 +9,14 @@
 import Foundation
 import CoreData
 
-
 extension NotesData {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<NotesData> {
         return NSFetchRequest<NotesData>(entityName: "NotesData")
     }
 
-    @NSManaged public var note: String?
-    @NSManaged public var noteData: String?
+    @NSManaged public var noteTitle: String?
+    @NSManaged public var noteContent: String?
 
 }
 
