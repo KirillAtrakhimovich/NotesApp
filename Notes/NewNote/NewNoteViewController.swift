@@ -12,14 +12,11 @@ class NewNoteViewController: UIViewController {
     
     private let persist = PersistenceManager()
     private let newNoteView = NewNoteView()
-    private var noteTitle: String = ""
-    private var noteContent: String = ""
-    private var models: [NotesData]?
+    private var note: NewNoteModel?
     
     override func loadView() {
-    view = newNoteView
-        
-}
+        view = newNoteView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +40,16 @@ class NewNoteViewController: UIViewController {
     }
     
     @objc func saveButtonTapped() {
-        newNoteView.textField.text = noteTitle
-        newNoteView.textView.text = noteContent
-        
+//        newNoteView.textField.text = noteTitle
+//        newNoteView.textView.text = noteContent
+        let newNote = NewNoteModel(noteTitle: newNoteView.textField.text ?? "",
+                                   note: newNoteView.textView.text ?? "")
+        persist.saveNote(model: newNote)
         navigationController?.popViewController(animated: true)
     }
     
     private func createModel(note: [NotesData]) {
-        let newNote = note.map { _ in NewNoteModel(noteTitle: newNoteView.textField.text ?? "", note: newNoteView.textView.text ?? "") }
-        
-        
+       
     }
     
     func completion(noteTitle: String, note: String) {
