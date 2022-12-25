@@ -8,8 +8,9 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
+    private let persist = PersistenceManager()
     private let homeView = HomeView()
-    private var noteList = [NotesData]()
+    private var noteList = [NewNoteModel]()
     
     override func loadView() {
     view = homeView
@@ -20,6 +21,8 @@ final class HomeViewController: UIViewController {
         homeView.setup()
         navigationBarSettings()
         setupTableSettings()
+        noteList = persist.getNotes()
+        homeView.tableView.reloadData()
     }
     
     func navigationBarSettings() {
@@ -68,7 +71,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         content.image = UIImage(systemName: "star")
         content.text = noteList[indexPath.row].noteTitle
-        content.secondaryText = noteList[indexPath.row].noteContent
+        content.secondaryText = noteList[indexPath.row].note
         cell.contentConfiguration = content
         return cell
     }
