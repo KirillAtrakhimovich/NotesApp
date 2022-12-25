@@ -15,8 +15,8 @@ extension NotesData {
         return NSFetchRequest<NotesData>(entityName: "NotesData")
     }
 
-    @NSManaged public var noteTitle: String?
-    @NSManaged public var noteContent: String?
+    @NSManaged public var noteTitle: String
+    @NSManaged public var noteContent: String
 
 }
 
