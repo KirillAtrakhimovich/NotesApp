@@ -17,9 +17,8 @@ extension NotesData {
 
     @NSManaged public var noteTitle: String
     @NSManaged public var noteContent: String
-
+    @NSManaged public var id: UUID
+    
 }
 
-extension NotesData : Identifiable {
-
-}
+extension NotesData: Identifiable {}
