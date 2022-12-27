@@ -52,7 +52,7 @@ final class HomeView: UIView {
         self.addSubview(tableView)
         tableView.snp.makeConstraints { constraints in
             constraints.top.equalTo(searchBar.snp.bottom).offset(10)
-            constraints.leading.equalToSuperview().offset(20)
+            constraints.leading.equalToSuperview().offset(5)
             constraints.trailing.equalToSuperview().offset(-20)
             constraints.bottom.equalTo(safeAreaLayoutGuide)
         }

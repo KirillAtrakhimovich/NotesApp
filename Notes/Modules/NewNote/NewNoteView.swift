@@ -28,21 +28,24 @@ class NewNoteView: UIView {
     let boldButton: UIButton = {
         let button = UIButton()
         button.setTitle("Bold", for: .normal)
-        button.configuration = UIButton.Configuration.plain()
+        button.configuration = UIButton.Configuration.gray()
+        button.tintColor = .black
         return button
     }()
     
     let cursiveButton: UIButton = {
         let button = UIButton()
         button.setTitle("Cursive", for: .normal)
-        button.configuration = UIButton.Configuration.plain()
+        button.configuration = UIButton.Configuration.gray()
+        button.tintColor = .black
         return button
     }()
     
     let fontButton: UIButton = {
         let button = UIButton()
         button.setTitle("Font", for: .normal)
-        button.configuration = UIButton.Configuration.plain()
+        button.configuration = UIButton.Configuration.gray()
+        button.tintColor = .black
         return button
     }()
     

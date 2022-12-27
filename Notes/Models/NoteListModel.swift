@@ -8,10 +8,10 @@
 import Foundation
 
 class NoteListModel {
-    var notes: [NoteItem]
-    var filteredNotes: [NoteItem]
+    var notes: [Note]
+    var filteredNotes: [Note]
     
-    init(notes: [NoteItem], filteredNotes: [NoteItem]) {
+    init(notes: [Note], filteredNotes: [Note]) {
         self.notes = notes
         self.filteredNotes = filteredNotes
     }
@@ -21,13 +21,7 @@ class NoteListModel {
             filteredNotes = notes
         } else {
             filteredNotes = notes.filter {
-                $0.noteTitle.localizedCaseInsensitiveContains(text) ||   $0.note.localizedCaseInsensitiveContains(text) }
+                $0.noteItem.noteTitle.localizedCaseInsensitiveContains(text) || $0.noteItem.note.localizedCaseInsensitiveContains(text) }
         }
     }
-}
-
-struct NoteItem: Hashable {
-    let id: UUID
-    let noteTitle: String
-    let note: String
 }

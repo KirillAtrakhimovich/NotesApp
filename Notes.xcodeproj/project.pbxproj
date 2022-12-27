@@ -11,10 +11,17 @@
 		28677BCB295A29E10033AA34 /* FontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BCA295A29E10033AA34 /* FontModel.swift */; };
 		28677BCD295A29EF0033AA34 /* SizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BCC295A29EF0033AA34 /* SizeModel.swift */; };
 		28677BCF295A2A730033AA34 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BCE295A2A730033AA34 /* NoteModel.swift */; };
-		2869ADC62957083600C2C44A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ADC52957083600C2C44A /* PersistenceManager.swift */; };
+		28677BD3295B4F4D0033AA34 /* UIFont+TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BD2295B4F4D0033AA34 /* UIFont+TextStyle.swift */; };
+		28677BD6295B502F0033AA34 /* NoteFontData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BD4295B502F0033AA34 /* NoteFontData+CoreDataClass.swift */; };
+		28677BD7295B502F0033AA34 /* NoteFontData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BD5295B502F0033AA34 /* NoteFontData+CoreDataProperties.swift */; };
+		28677BDA295B55200033AA34 /* NotesData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BD8295B55200033AA34 /* NotesData+CoreDataClass.swift */; };
+		28677BDB295B55200033AA34 /* NotesData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BD9295B55200033AA34 /* NotesData+CoreDataProperties.swift */; };
+		28677BDD295B58510033AA34 /* NoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BDC295B58510033AA34 /* NoteItem.swift */; };
+		28677BE1295B5A300033AA34 /* NoteFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BE0295B5A300033AA34 /* NoteFont.swift */; };
+		28677BE3295B5ADE0033AA34 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BE2295B5ADE0033AA34 /* Note.swift */; };
+		28677BE6295B68E90033AA34 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28677BE5295B68E90033AA34 /* PersistenceManager.swift */; };
+		2869ADC62957083600C2C44A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ADC52957083600C2C44A /* CoreDataManager.swift */; };
 		2869ADDD295710BF00C2C44A /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2869ADDB295710BF00C2C44A /* Notes.xcdatamodeld */; };
-		28A82BF72957138800551190 /* NotesData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A82BF52957138800551190 /* NotesData+CoreDataClass.swift */; };
-		28A82BF82957138800551190 /* NotesData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A82BF62957138800551190 /* NotesData+CoreDataProperties.swift */; };
 		28A82BFE29573F0200551190 /* NoteListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A82BFD29573F0200551190 /* NoteListModel.swift */; };
 		28B422B22953124D00543AF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B422B12953124D00543AF9 /* AppDelegate.swift */; };
 		28B422B42953124D00543AF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B422B32953124D00543AF9 /* SceneDelegate.swift */; };
@@ -31,10 +38,17 @@
 		28677BCA295A29E10033AA34 /* FontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModel.swift; sourceTree = "<group>"; };
 		28677BCC295A29EF0033AA34 /* SizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeModel.swift; sourceTree = "<group>"; };
 		28677BCE295A2A730033AA34 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
-		2869ADC52957083600C2C44A /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		28677BD2295B4F4D0033AA34 /* UIFont+TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+TextStyle.swift"; sourceTree = "<group>"; };
+		28677BD4295B502F0033AA34 /* NoteFontData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteFontData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		28677BD5295B502F0033AA34 /* NoteFontData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteFontData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		28677BD8295B55200033AA34 /* NotesData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		28677BD9295B55200033AA34 /* NotesData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		28677BDC295B58510033AA34 /* NoteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItem.swift; sourceTree = "<group>"; };
+		28677BE0295B5A300033AA34 /* NoteFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFont.swift; sourceTree = "<group>"; };
+		28677BE2295B5ADE0033AA34 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		28677BE5295B68E90033AA34 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		2869ADC52957083600C2C44A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2869ADDC295710BF00C2C44A /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
-		28A82BF52957138800551190 /* NotesData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		28A82BF62957138800551190 /* NotesData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		28A82BFD29573F0200551190 /* NoteListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListModel.swift; sourceTree = "<group>"; };
 		28B422AE2953124D00543AF9 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B422B12953124D00543AF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,12 +87,48 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		28677BD0295B4F2A0033AA34 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				28677BD1295B4F320033AA34 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		28677BD1295B4F320033AA34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				28677BD2295B4F4D0033AA34 /* UIFont+TextStyle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		28677BE4295B68C90033AA34 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				28677BE5295B68E90033AA34 /* PersistenceManager.swift */,
+				2869ADAF295701F000C2C44A /* CoreData */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		28677BE7295B696F0033AA34 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				28B422C9295315A800543AF9 /* Home */,
+				28B422FF29547C9000543AF9 /* NewNote */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		2869ADAF295701F000C2C44A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				28A82BF52957138800551190 /* NotesData+CoreDataClass.swift */,
-				28A82BF62957138800551190 /* NotesData+CoreDataProperties.swift */,
-				2869ADC52957083600C2C44A /* PersistenceManager.swift */,
+				28677BD8295B55200033AA34 /* NotesData+CoreDataClass.swift */,
+				28677BD9295B55200033AA34 /* NotesData+CoreDataProperties.swift */,
+				28677BD4295B502F0033AA34 /* NoteFontData+CoreDataClass.swift */,
+				28677BD5295B502F0033AA34 /* NoteFontData+CoreDataProperties.swift */,
+				2869ADC52957083600C2C44A /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -88,6 +138,9 @@
 			children = (
 				28A82BFD29573F0200551190 /* NoteListModel.swift */,
 				28677BCE295A2A730033AA34 /* NoteModel.swift */,
+				28677BE2295B5ADE0033AA34 /* Note.swift */,
+				28677BDC295B58510033AA34 /* NoteItem.swift */,
+				28677BE0295B5A300033AA34 /* NoteFont.swift */,
 				28677BCA295A29E10033AA34 /* FontModel.swift */,
 				28677BCC295A29EF0033AA34 /* SizeModel.swift */,
 			);
@@ -115,10 +168,10 @@
 		28B422B02953124D00543AF9 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				28677BE4295B68C90033AA34 /* Persistence */,
+				28677BD0295B4F2A0033AA34 /* Helpers */,
 				28A82BF929573ED700551190 /* Models */,
-				2869ADAF295701F000C2C44A /* CoreData */,
-				28B422FF29547C9000543AF9 /* NewNote */,
-				28B422C9295315A800543AF9 /* Home */,
+				28677BE7295B696F0033AA34 /* Modules */,
 				28B422B12953124D00543AF9 /* AppDelegate.swift */,
 				28B422B32953124D00543AF9 /* SceneDelegate.swift */,
 				28B422BA2953124F00543AF9 /* Assets.xcassets */,
@@ -290,19 +343,26 @@
 			files = (
 				28B422C62953158500543AF9 /* HomeViewController.swift in Sources */,
 				2869ADDD295710BF00C2C44A /* Notes.xcdatamodeld in Sources */,
+				28677BE3295B5ADE0033AA34 /* Note.swift in Sources */,
 				28677BCB295A29E10033AA34 /* FontModel.swift in Sources */,
-				2869ADC62957083600C2C44A /* PersistenceManager.swift in Sources */,
+				2869ADC62957083600C2C44A /* CoreDataManager.swift in Sources */,
 				28B4230329547CFF00543AF9 /* NewNoteView.swift in Sources */,
-				28A82BF72957138800551190 /* NotesData+CoreDataClass.swift in Sources */,
+				28677BD7295B502F0033AA34 /* NoteFontData+CoreDataProperties.swift in Sources */,
+				28677BE1295B5A300033AA34 /* NoteFont.swift in Sources */,
 				28BDF61A2954858A0072F0E4 /* NewNoteViewController.swift in Sources */,
+				28677BD6295B502F0033AA34 /* NoteFontData+CoreDataClass.swift in Sources */,
+				28677BD3295B4F4D0033AA34 /* UIFont+TextStyle.swift in Sources */,
 				28B422C8295315A200543AF9 /* HomeView.swift in Sources */,
-				28A82BF82957138800551190 /* NotesData+CoreDataProperties.swift in Sources */,
+				28677BDD295B58510033AA34 /* NoteItem.swift in Sources */,
+				28677BDB295B55200033AA34 /* NotesData+CoreDataProperties.swift in Sources */,
 				28A82BFE29573F0200551190 /* NoteListModel.swift in Sources */,
 				28677BCF295A2A730033AA34 /* NoteModel.swift in Sources */,
 				28B422CC2953395300543AF9 /* HomeTableViewCell.swift in Sources */,
+				28677BDA295B55200033AA34 /* NotesData+CoreDataClass.swift in Sources */,
 				28B422B22953124D00543AF9 /* AppDelegate.swift in Sources */,
 				28677BCD295A29EF0033AA34 /* SizeModel.swift in Sources */,
 				28B422B42953124D00543AF9 /* SceneDelegate.swift in Sources */,
+				28677BE6295B68E90033AA34 /* PersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

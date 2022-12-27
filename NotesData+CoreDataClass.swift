@@ -2,7 +2,7 @@
 //  NotesData+CoreDataClass.swift
 //  Notes
 //
-//  Created by Kirill Atrakhimovich on 24.12.22.
+//  Created by Kirill Atrakhimovich on 27.12.22.
 //
 //
 

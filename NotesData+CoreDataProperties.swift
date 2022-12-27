@@ -2,7 +2,7 @@
 //  NotesData+CoreDataProperties.swift
 //  Notes
 //
-//  Created by Kirill Atrakhimovich on 24.12.22.
+//  Created by Kirill Atrakhimovich on 27.12.22.
 //
 //
 
@@ -15,10 +15,10 @@ extension NotesData {
         return NSFetchRequest<NotesData>(entityName: "NotesData")
     }
 
-    @NSManaged public var noteTitle: String
-    @NSManaged public var noteContent: String
     @NSManaged public var id: UUID
-    
+    @NSManaged public var noteContent: String
+    @NSManaged public var noteTitle: String
+    @NSManaged public var noteFont: NoteFontData
 }
 
 extension NotesData: Identifiable {}

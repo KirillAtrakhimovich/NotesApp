@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NoteFontData" representedClassName="NoteFontData" syncable="YES">
+        <attribute name="isBold" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isCursive" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="size" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="NotesData" representedClassName="NotesData" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="noteContent" attributeType="String"/>
         <attribute name="noteTitle" attributeType="String"/>
+        <relationship name="noteFont" maxCount="1" deletionRule="Cascade" destinationEntity="NoteFontData"/>
     </entity>
     <elements>
-        <element name="NotesData" positionX="-9" positionY="36" width="128" height="74"/>
+        <element name="NotesData" positionX="-9" positionY="36" width="128" height="89"/>
+        <element name="NoteFontData" positionX="-9" positionY="63" width="128" height="89"/>
     </elements>
 </model>
