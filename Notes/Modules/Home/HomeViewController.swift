@@ -8,18 +8,17 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-    private let persist = PersistenceManager()
+    
+    private let persist: PersistenceManager = CoreDataManager()
     private let homeView = HomeView()
     private var noteModel: NoteListModel?
     
     override func loadView() {
-    view = homeView
-}
+        view = homeView
+    }
 
     override func viewWillAppear(_ animated: Bool) {
-        let notesList = persist.getNotes()
-        noteModel = NoteListModel(notes: notesList, filteredNotes: notesList)
-        homeView.tableView.reloadData()
+        updateNotes()
     }
     
     override func viewDidLoad() {
@@ -28,9 +27,7 @@ final class HomeViewController: UIViewController {
         navigationBarSettings()
         setupTableSettings()
         setupSearchBarSettings()
-        let notesList = persist.getNotes()
-        noteModel = NoteListModel(notes: notesList, filteredNotes: notesList)
-        homeView.tableView.reloadData()
+        updateNotes()
     }
     
     func navigationBarSettings() {
@@ -67,6 +64,11 @@ final class HomeViewController: UIViewController {
         homeView.searchBar.returnKeyType = UIReturnKeyType.done
     }
     
+    private func updateNotes() {
+        let notesList = persist.getNotes()
+        noteModel = NoteListModel(notes: notesList, filteredNotes: notesList)
+        homeView.tableView.reloadData()
+    }
 }
 
 extension HomeViewController: UISearchBarDelegate {
@@ -92,10 +94,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         var content = cell.defaultContentConfiguration()
-
-        content.image = UIImage(systemName: "star")
-        content.text = noteModel?.filteredNotes[indexPath.row].noteTitle
-        content.secondaryText = noteModel?.filteredNotes[indexPath.row].note
+        content.text = noteModel?.filteredNotes[indexPath.row].noteItem.noteTitle
+        content.secondaryText = noteModel?.filteredNotes[indexPath.row].noteItem.note
         cell.contentConfiguration = content
         return cell
     }
@@ -118,7 +118,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         guard let deleteNote = noteModel?.filteredNotes[indexPath.row] else { return }
         if editingStyle == .delete {
             tableView.beginUpdates()
-            persist.delete(item: deleteNote)
+            persist.deleteNote(item: deleteNote)
             noteModel?.filteredNotes.remove(at: indexPath.row)
             noteModel?.notes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
